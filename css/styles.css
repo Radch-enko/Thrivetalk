@@ -134,8 +134,9 @@ button:focus {
 }
 
 .container {
-  max-width: 1130px;
+  max-width: 1160px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .button {
@@ -219,21 +220,82 @@ button:focus {
 /* Header styles */
 
 .header {
+  padding: 27px 0 75px;
   background-image: url("../media/img/header-bg.svg");
+  background-position: top;
   background-repeat: no-repeat;
-  background-size: 100%;
-  height: 1010px;
+  background-size: cover;
 }
 
 .header__top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 27px;
+  z-index: 11;
+  transition: ease-out 0.3s;
+}
+.header__top.sticky {
+  position: fixed;
+  background: #f4f9e2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  transition: ease-out 0.3s;
+}
+
+nav.active {
+  position: fixed;
+  font-size: 2.5em;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  flex-direction: column;
 }
 
 .nav__list {
   display: flex;
+}
+
+nav.active .nav__item {
+  margin: 30px 0;
+}
+.nav__button {
+  display: none;
+}
+.nav__button.active {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 11;
+}
+.button__line,
+.button__line::before,
+.button__line::after {
+  display: block;
+  position: relative;
+  background: #000;
+  width: 20px;
+  height: 2px;
+  content: "";
+}
+.button__line::before {
+  top: -5px;
+}
+
+.button__line::after {
+  top: 3px;
+}
+
+.nav__button.active {
+  transform: rotate(90deg);
 }
 
 .nav__item {
@@ -285,22 +347,27 @@ button:focus {
 /* Main's section styles */
 
 /*Why Thrive seciton*/
-.why-thrive {
-  padding: 150px 0 91px;
-  position: relative;
-  height: 604px;
+
+.why-thrive__inner {
+  display: flex;
+  justify-content: space-between;
 }
 
 .why-thrive__content {
+  flex: 0 1 auto;
+  padding: 120px 15px 91px;
   margin: auto;
 }
 
-.why-thrive img {
-  position: absolute;
-  max-width: 525px;
-  max-height: 604px;
-  right: 0;
-  top: 0;
+.why-thrive__image {
+  flex: 0 1 auto;
+}
+
+.why-thrive__image img {
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: left;
 }
 
 .why-thrive__subtitle {
@@ -332,6 +399,7 @@ button:focus {
   margin: auto;
   max-width: 592px;
   font-weight: 500;
+  padding: 0 15px;
 }
 
 /*can-help*/
@@ -352,7 +420,7 @@ button:focus {
   margin-top: 24px;
   flex: 0 0 25%;
   height: 360px;
-  padding: 71px 52.5px 0;
+  padding: 3.5em 2.5em 0;
 }
 
 .squere__title {
@@ -406,7 +474,7 @@ button:focus {
 
 .service {
   flex: 0 0 33.33%;
-  padding: 55px 0 27px 107px;
+  padding: 55px 30px 27px 70px;
 }
 
 .service__title {
@@ -426,9 +494,20 @@ button:focus {
   justify-content: space-between;
 }
 
+.also-know__image {
+  flex: 0 1 auto;
+}
+
+.also-know img {
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
 .also-know__content {
   flex: 1 1 auto;
-  padding: 103px 0 60px 106px;
+  padding: 103px 60px 106px;
 }
 
 .also-know__text {
@@ -445,16 +524,24 @@ button:focus {
 
 /* contact-us */
 
-.contact-us {
-  padding: 103px 0 60px;
-  position: relative;
-  height: 800px;
+.contact-us__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-us__content {
+  padding: 103px 15px 60px;
+}
+
+.contact-us__image {
+  flex: 0 1 auto;
 }
 
 .contact-us img {
-  position: absolute;
-  right: 0;
-  top: 0;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
 .contact-us__title {
@@ -477,35 +564,31 @@ button:focus {
 
 /* Footer styles */
 
-.footer {
+.footer__inner {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+}
+
+.footer__image {
+  flex: 0 1 30%;
+}
+
+.footer__image img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
 }
 
 .footer__information {
   padding: 98px 0 0 68px;
   flex: 1 1 auto;
   display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  align-items: baseline;
 }
 
-.footer__col {
-  position: relative;
-  flex: 0 0 33.33%;
-}
-
-.footer__col:not(:last-of-type):after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 160px;
-  background: rgba(34, 53, 111, 0.5);
-  position: absolute;
-  top: 50px;
-  right: 100px;
-  opacity: 0.1;
+.footer__col:not(:first-of-type) {
+  margin-left: 80px;
 }
 
 .col__label {
@@ -515,6 +598,177 @@ button:focus {
 }
 
 .col__text {
+  position: relative;
   margin-top: 55px;
   max-width: 207px;
+}
+
+.subfooter {
+  padding: 32px 0;
+}
+
+/*Breakpoints*/
+
+@media screen and (max-width: 1200px) {
+  body {
+    font-size: 14px;
+  }
+  .header {
+    background-color: #f4f9e2;
+  }
+  .header__body {
+    margin-top: 0.5em;
+  }
+  .header__body .logo {
+    display: none;
+  }
+  .can-help__square {
+    font-size: 0.75em;
+  }
+  .squere__title {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    text-align: center;
+  }
+  .squere__title::before {
+    top: -10px;
+    margin: 0;
+  }
+  .also-know__content {
+    padding: 6em 2em 2em;
+  }
+  .footer__information {
+    padding: 3em;
+    justify-content: space-between;
+  }
+  .footer__col:not(:first-of-type) {
+    margin: 30px 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    font-size: 12px;
+  }
+  .header {
+    background-size: contain;
+  }
+  .header__inner .button {
+    padding: 0.75em;
+  }
+  .about-us__tag {
+    text-align: center;
+    position: relative;
+    padding: 0;
+    top: 0;
+  }
+  .big__square {
+    flex: 0 0 50%;
+  }
+  .footer__information {
+    flex-wrap: wrap;
+  }
+  .footer__col {
+    margin: 30px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 10px;
+  }
+  .why-thrive__inner {
+    flex-wrap: wrap-reverse;
+  }
+  .why-thrive__image {
+    flex: 1 1 100%;
+  }
+  .why-thrive__image img {
+    width: 100%;
+  }
+
+  .also-know__text {
+    margin-top: 1.5em;
+  }
+
+  .also-know__button {
+    margin-top: 3em;
+  }
+  .contact-us__tag {
+    margin-top: 1em;
+  }
+  .contact-us__title {
+    margin-top: 1.5em;
+  }
+  .contact-us__subtitle {
+    margin-top: 1.5em;
+  }
+  .contact-us__button {
+    margin-top: 2em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    background-image: none;
+  }
+
+  nav {
+    background-color: #f4f9e2;
+    position: absolute;
+    top: -200px;
+    opacity: 1;
+    z-index: 10;
+  }
+  .nav .nav__item.active::after {
+    bottom: 3px;
+  }
+
+  .nav__list {
+    flex-direction: column;
+  }
+
+  .nav__button {
+    display: block;
+  }
+  .big__squares {
+    margin: 0;
+  }
+  .can-help__square,
+  .big__square {
+    margin: 0;
+    flex: 0 0 100%;
+    height: 180px;
+    padding: 3.5em 2.5em 0;
+  }
+  .service {
+    flex: 0 0 100%;
+    padding: 2em;
+  }
+  .also-know {
+    flex-wrap: wrap;
+  }
+  .also-know__image {
+    flex: 1 1 100%;
+  }
+  .also-know img {
+    width: 100%;
+    height: auto;
+  }
+  .contact-us__inner {
+    flex-wrap: wrap;
+  }
+  .contact-us__image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer__inner {
+    flex-wrap: wrap-reverse;
+  }
+  .footer__image {
+    flex: 1 1 100%;
+  }
 }

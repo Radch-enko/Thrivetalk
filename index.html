@@ -7,58 +7,63 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="fonts/Larsseit/stylesheet.css" />
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="js/superscrollorama.js">
   </head>
 
   <body>
-    <header class="header">
+    <header class="header" id="header">
       <div class="container">
-        <div class="header__top">
-          <div class="logo">
-            <h5 class="color-blue">Thrivetalk</h5>
+          <div class="header__inner">
+            <div class="header__top">
+              <div class="logo">
+                <h5 class="color-blue">Thrivetalk</h5>
+              </div>
+              <div class="nav">
+                <a href="#" class="button nav__button"><span class="button__line"></span></a>
+                <nav>
+                  <ul class="nav__list">
+                    <li class="nav__item active">
+                      <a class="nav__link color-primary" href="#header">Home</a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__link color-primary" href="#about-us">About</a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__link color-primary" href="#service">Service</a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__link color-primary" href="#blog">Blog</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <a href="#contact-us" class="button button-contact-us bg-blue color-white">
+                CONTACT US
+              </a>
+            </div>
+            <div class="header__body">
+              <div class="logo">
+                <h5 class="color-blue">Thrivetalk</h5>
+              </div>
+              <h1 class="header__title color-primary">
+                HELPING YOU THRIVE IN ALL AREAS OF LIFE
+              </h1>
+              <h5 class="header__subtitle color-primary">
+                Our highly talented therapists can help you with a range of issues
+                including relationships, sex, PTSD, depression, social anxiety, or
+                even just caring for yourself more.
+              </h5>
+              <a href="#" class="button button-who-i-am bg-orange color-white">
+                WHO AM I
+              </a>
+            </div>
           </div>
-          <div class="nav">
-            <nav>
-              <ul class="nav__list">
-                <li class="nav__item active">
-                  <a class="nav__link color-primary" href="#">Home</a>
-                </li>
-                <li class="nav__item">
-                  <a class="nav__link color-primary" href="#">About</a>
-                </li>
-                <li class="nav__item">
-                  <a class="nav__link color-primary" href="#">Service</a>
-                </li>
-                <li class="nav__item">
-                  <a class="nav__link color-primary" href="#">Blog</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="button button-contact-us bg-blue color-white">
-            <a href="#" class="">CONTACT US</a>
-          </div>
-        </div>
-        <div class="header__body">
-          <div class="logo">
-            <h5 class="color-blue">Thrivetalk</h5>
-          </div>
-          <h1 class="header__title color-primary">
-            HELPING YOU THRIVE IN ALL AREAS OF LIFE
-          </h1>
-          <h5 class="header__subtitle color-primary">
-            Our highly talented therapists can help you with a range of issues
-            including relationships, sex, PTSD, depression, social anxiety, or
-            even just caring for yourself more.
-          </h5>
-          <div class="button button-who-i-am bg-orange color-white">
-            <a href="#" class="">WHO AM I</a>
-          </div>
-        </div>
       </div>
     </header>
     <main class="main">
       <div class="why-thrive bg-blue">
-        <div class="container">
+        <div class="why-thrive__inner">
           <div class="why-thrive__content">
             <h2 class="why-thrive__title color-white">Why Thrive?</h2>
             <h5 class="why-thrive__subtitle color-white">
@@ -72,20 +77,22 @@
               ThriveTalk. Start therapy now with a licensed therapist!
             </h5>
           </div>
+          <div class="why-thrive__image">
+            <img src="media/img/why-thrive-img.png" alt="" />
+          </div>
         </div>
-        <img src="media/img/why-thrive-img.png" alt="" />
       </div>
-      <div class="about-us">
-        <p class="tag about-us__tag color-primary">about us</p>
-        <h5 class="about-us__text color-primary">
-          We want to help you thrive! Whether you are just looking for someone
-          to talk to, or are struggling with a mental wellness issue we’re here
-          to help. Our highly talented therapists can help you with a range of
-          issues including relationships, sex, PTSD, depression, social anxiety,
-          or even just caring for yourself more.
-        </h5>
+      <div class="about-us" id="about-us">
+          <p class="tag about-us__tag color-primary">about us</p>
+          <h5 class="about-us__text color-primary">
+            We want to help you thrive! Whether you are just looking for someone
+            to talk to, or are struggling with a mental wellness issue we’re here
+            to help. Our highly talented therapists can help you with a range of
+            issues including relationships, sex, PTSD, depression, social anxiety,
+            or even just caring for yourself more.
+          </h5>
       </div>
-      <div class="can-help">
+      <div class="can-help" id="service">
         <p>WE CAN HELP YOU WITH</p>
         <div class="squares can-help__squares">
           <div class="can-help__square bg-pink">
@@ -185,10 +192,12 @@
           </p>
         </div>
       </div>
-      <div class="also-know">
-        <img src="media/img/also-know-img.png" alt="" />
+      <div class="also-know" id="blog">
+        <div class="also-know__image">
+          <img src="media/img/also-know-img.png" alt="" />
+        </div>
         <div class="also-know__content">
-          <p class="tag color-primary">YOU SHOULD ALSO KNOW</p>
+          <p class="tag also-know__tag color-primary">YOU SHOULD ALSO KNOW</p>
           <h2 class="also-know__text color-primary">
             MDD affects more than 16.1 million American adults, or about 6.7%of
             the U.S. population age 18 and older in a given year. We at
@@ -199,8 +208,8 @@
           >
         </div>
       </div>
-      <div class="contact-us bg-primary">
-        <div class="container">
+      <div class="contact-us bg-primary" id="contact-us">
+        <div class="contact-us__inner">
           <div class="contact-us__content">
             <p class="tag contact-us__tag color-white">CONTACT US</p>
             <h2 class="contact-us__title color-white">Ready. Set. Smile</h2>
@@ -212,45 +221,75 @@
               >GET HELP NOW</a
             >
           </div>
+          <div class="contact-us__image">
+            <img src="media/img/negr-kekaet.png" alt="" />
+          </div>
         </div>
-        <img src="media/img/negr-kekaet.png" alt="" />
       </div>
     </main>
     <footer class="footer">
-      <img src="media/img/footer-image.png" alt="" />
-      <div class="footer__information">
-        <div class="footer__col">
-          <div class="col__label">SOME INFO</div>
-          <div class="col__text">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula.
+      <div class="footer__inner">
+        <div class="footer__image">
+          <img src="media/img/footer-image.png" alt="" />
+        </div>
+        <div class="footer__information">
+          <div class="footer__col">
+            <div class="col__label">SOME INFO</div>
+            <div class="col__text">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo ligula.
+            </div>
+          </div>
+          <div class="footer__col">
+            <div class="col__label">ENFOLD HEALTH</div>
+            <div class="col__text">
+              <p>Main Street 1, Olcott Buffalo, United States</p>
+              <br />
+              <a href="tel:+555 283 784 333">+555 283 784 333</a>
+              <a
+                class="col__link color-dark-blue"
+                href="mailto:office@enfold-health.com"
+                >office@enfold-health.com</a
+              >
+            </div>
+          </div>
+          <div class="footer__col">
+            <div class="col__label">OFFICE HOURS</div>
+            <div class="col__text">
+              <p>Mo-Fr: 8:00-19:00</br>
+                Sa: 8:00-14:00</br>
+                Su: closed</p>
+            </div>
           </div>
         </div>
-        <div class="footer__col">
-          <div class="col__label">ENFOLD HEALTH</div>
-          <div class="col__text">
-            <p>Main Street 1, Olcott Buffalo, United States</p>
-            <br />
-            <a href="tel:+555 283 784 333">+555 283 784 333</a>
-            <a
-              class="col__link color-dark-blue"
-              href="mailto:office@enfold-health.com"
-              >office@enfold-health.com</a
-            >
-          </div>
-        </div>
-        <div class="footer__col">
-          <div class="col__label">OFFICE HOURS</div>
-          <div class="col__text">
-            <p>Mo-Fr: 8:00-19:00</br>
-              Sa: 8:00-14:00</br>
-              Su: closed</p>
-          </div>
+      </div>
+      <div class="subfooter bg-blue">
+        <div class="container">
+          <p class="color-white">&copy; Copyright - ThriveTalk  2017</p>
         </div>
       </div>
     </footer>
     <!-- Scripts -->
     <script src="jquery/script.js"></script>
     <script src="js/script.js"></script>
+    <script src="onScreen-master/lib/index.js"
+    <script>
+      $('.why-thrive').onScreen({
+        container: window,
+        direction: 'vertical',
+        doIn: function() {
+        // Do something to the matched elements as they come in
+        },
+        doOut: function() {
+        // Do something to the matched elements as they get off scren
+        },
+        tolerance: 0,
+        throttle: 50,
+        toggleClass: 'onScreen',
+        lazyAttr: null,
+        lazyPlaceholder: 'someImage.jpg',
+        debug: false
+      });
+    </script>
   </body>
 </html>
